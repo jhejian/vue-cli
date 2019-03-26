@@ -30,8 +30,11 @@ import 'babel-polyfill'
 
 import App from './App'
 import router from './router'
+import store from './store'
 
 import axios from "axios"
+import http from './utils/request'//引入封装的请求
+Vue.prototype.$http = http
 // 设置post请求的请求头headers里面的Content-Type字段
 // application/json
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8'
@@ -50,6 +53,7 @@ Vue.config.productionTip = false//阻止启动生产消息，常用作指令。
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

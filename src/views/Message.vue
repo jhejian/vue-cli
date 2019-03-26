@@ -11,9 +11,15 @@
                 Json字符串请求
             </button>
         </p>
+        <div>
+            <!-- 挂载组件 -->
+            <v-BaseVue></v-BaseVue>
+        </div>
     </div>
 </template>
 <script>
+// 引入组件
+import BaseVue from './components/BaseVue'
 let Base64 = require('js-base64').Base64;
 export default {
     name: 'Message',
@@ -101,5 +107,9 @@ export default {
     mounted() {
         this.content = this.$route.params.content
     },
+    // 注册组件
+    components: {
+        'v-BaseVue': BaseVue
+    }
 }
 </script>

@@ -9,11 +9,14 @@
             <!-- 挂载组件 -->
             <Directive></Directive>
         </p>
+        <hr/>
+        <v-VueBase></v-VueBase>
     </div>
 </template>
 <script>
 // 引入组件
 import Directive from './Directive'
+import VueBase from './components/VueBase'
 export default {
     name: 'News',
     data() {
@@ -28,7 +31,8 @@ export default {
     },
     // 注册组件
     components: {
-        Directive
+        Directive,
+        'v-VueBase': VueBase
     }
 }
 </script>

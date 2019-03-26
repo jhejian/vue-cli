@@ -9,10 +9,36 @@
     <button @click="getList">
       session问题
     </button>
+
+    <br/><br/>
+    <div>
+      <!-- 挂载登录组件 -->
+      <!-- 组件传值绑定属性时title一定得在data中定义，如若写死数据则需反引号转义 -->
+      <v-login :myTitle="`title`"></v-login>
+    </div>
+
+    <pre>
+      在vue中如何获取token，并将token写进header
+        1.在login.vue中通过发送http请求获取token
+
+        2.在store.js中对token状态进行监管
+
+        3.在router/index.js中设置路由拦截
+
+        4.在main.js中定义全局默认配置：
+          Axios.defaults.headers.common['Token'] 
+          = 
+          store.state.token;
+          Token：名字跟后台设置保持一致
+        
+        5.在main.js里添加拦截器
+    </pre>
   </div>
 </template>
 
 <script>
+// 引入登录组件
+import Login from './Login'
 export default {
   name: 'HelloWorld',
   data () {
@@ -51,6 +77,10 @@ export default {
   mounted() {
     // this.doLogin()
   },
+  // 注册登录组件
+  components: {
+    'v-login': Login
+  }
 }
 </script>
 
