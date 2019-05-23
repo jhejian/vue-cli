@@ -46,6 +46,10 @@ const router =new Router({
       meta: {
         requireAuth:true
       }
+    },{
+      path: '/MessageBox',
+      name: 'MessageBox',
+      component: () => import('@/views/MessageBox')
     }
   ]
 })

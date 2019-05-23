@@ -15,6 +15,10 @@
             <!-- 挂载组件 -->
             <v-BaseVue></v-BaseVue>
         </div>
+        <hr>
+        <el-button size="small" @click="goMessageBox">
+            goMessageBox
+        </el-button>
     </div>
 </template>
 <script>
@@ -38,6 +42,11 @@ export default {
         }
     },
     methods: {
+        goMessageBox(){
+            this.$router.push({
+                path: '/MessageBox'
+            })
+        },
         getAjax(){
             // Axios传参的两种方式，表单数据和json字符串
             // 第一种方式：Form Data
