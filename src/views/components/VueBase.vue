@@ -6,9 +6,7 @@
         <br>
         <section v-changeBackground='`20px`'></section>
         <br>
-        <aside class="aside" v-drag>
-
-        </aside>
+        <aside class="aside" v-drag></aside>
         <br>
         <p>
             <span>普通属性：{{ msg }}</span>
