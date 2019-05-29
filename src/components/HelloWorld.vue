@@ -2,14 +2,17 @@
   <div class="hello">
     {{ msg }}
     <br>
-    <button @click="doLogin">
+    <el-button @click="doLogin" size='small'>
       登录
-    </button>
+    </el-button>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <button @click="getList">
+    <el-button @click="getList" size='small'>
       session问题
-    </button>
-
+    </el-button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <el-button @click="goGitHubIO" size='small'>
+      GitHubIO
+    </el-button>
     <br/><br/>
     <div>
       <!-- 挂载登录组件 -->
@@ -71,6 +74,11 @@ export default {
       }).then(res =>{
         // console.log(res.data.Message, '列表响应')//'登录超时，请重新登录' '列表响应' => 原因是session问题
         console.log(res.data.Data.ResultList)//可以获取到数据
+      })
+    },
+    goGitHubIO(){
+      this.$router.push({
+        name: 'GitHubIO'
       })
     }
   },
