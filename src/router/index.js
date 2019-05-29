@@ -28,7 +28,8 @@ const router =new Router({
       name: 'News',
       component: () => import('@/views/News'),
       meta: {
-        requireAuth:true
+        // requireAuth: true,
+        requireAuth: false
       }
     },
     {
@@ -36,7 +37,8 @@ const router =new Router({
       name: 'Order',
       component: () => import('@/views/Order'),
       meta: {
-        requireAuth:true
+        // requireAuth: true,
+        requireAuth: false
       }
     },
     {
@@ -44,12 +46,19 @@ const router =new Router({
       name: 'Message',
       component: () => import('@/views/Message'),
       meta: {
-        requireAuth:true
+        // requireAuth: true,
+        requireAuth: false
       }
-    },{
+    },
+    {
       path: '/MessageBox',
       name: 'MessageBox',
       component: () => import('@/views/MessageBox')
+    },
+    {
+      path: '/GitHubIO',
+      name: 'GitHubIO',
+      component: () => import('@/views/GitHubIO')
     }
   ]
 })
